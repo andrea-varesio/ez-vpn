@@ -1,13 +1,13 @@
 #!/bin/bash
 
-VERSION="20221107.01"
+VERSION="20230102.01"
 
 show_license () {
     # Print license
 
     echo '
     "EZ VPN" - Easy Linux CLI VPN manager for multiple providers
-    Copyright (C) 2022 Andrea Varesio <https://www.andreavaresio.com/>
+    Copyright (C) 2023 Andrea Varesio <https://www.andreavaresio.com/>
     Source Code: <https://github.com/andrea-varesio/ez-vpn>
 
     This program is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ show_help () {
     # Show help message and exit
 
     echo '"EZ VPN" - Easy Linux CLI VPN manager for multiple providers'
-    echo "Copyright (C) 2022 Andrea Varesio <https://www.andreavaresio.com/>"
+    echo "Copyright (C) 2023 Andrea Varesio <https://www.andreavaresio.com/>"
     echo "version: $VERSION"
     echo
     echo 'usage: ez-vpn [OPTION] [POLICY]
@@ -95,7 +95,7 @@ run_updater () {
     downloaded_version=$(grep -m1 VERSION "$temp_file" | grep -o '[0-9.]*')
 
     if [[ -z "$downloaded_version" ]]; then abort_update "Error while establishing new version."; fi
-    
+
     if [[ "$installed_version" == "$downloaded_version" ]]; then
         echo "Latest version ($installed_version) already installed. Update not necessary."
     else
@@ -183,7 +183,7 @@ ez_mullvad () {
     # Perform action requested with $1 and additional parameter $2 (if provided)
 
     if [[ "$1" == "acc" ]]; then mullvad account get
-    elif [[ "$1" == "a" ]]; then mullvad auto-connect set 
+    elif [[ "$1" == "a" ]]; then mullvad auto-connect set
     elif [[ "$1" == "c" ]] && [[ -n "$2" ]]; then mullvad relay set location "$2" &> /dev/null; ez_mullvad "r"
     elif [[ "$1" == "c" ]]; then mullvad connect
     elif [[ "$1" == "d" ]]; then mullvad disconnect
@@ -208,7 +208,7 @@ ez_expressvpn () {
 ez_nordvpn () {
     # Perform action requested with $1 and additional parameter $2 (if provided)
 
-    if [[ "$1" == "acc" ]]; then nordvpn account 
+    if [[ "$1" == "acc" ]]; then nordvpn account
     elif [[ "$1" == "a" ]]; then nordvpn set autoconnect on
     elif [[ "$1" == "c" ]]; then nordvpn c "$2"
     elif [[ "$1" == "d" ]]; then nordvpn d

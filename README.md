@@ -1,3 +1,6 @@
+# ⚠️ WARNING ⚠️
+This project is no longer being maintained. Use at your own risk.
+
 # Ez VPN: Easy Linux CLI VPN manager for multiple providers
 
 This tool can handle basic functionalities of several VPN apps without having to use different commands.
@@ -51,7 +54,7 @@ GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
 "EZ VPN" - Easy Linux CLI VPN manager for multiple providers<br />
-Copyright (C) 2022 Andrea Varesio <https://www.andreavaresio.com/><br />
+Copyright (C) 2023 Andrea Varesio <https://www.andreavaresio.com/><br />
 Source Code: <https://github.com/andrea-varesio/ez-vpn>
 
 This program is free software: you can redistribute it and/or modify
